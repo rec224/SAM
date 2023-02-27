@@ -1,13 +1,12 @@
 int N;
-int matrix_mult(int[][16], int[][16], int[][16]);
-int SAM();
-int matrix_mult(int [][16] a, int [][16]b, int [][16]c){
+void matrix_mult(int[][16], int[][16], int[][16]);
+void SAM();
+void matrix_mult(int [][16] a, int [][16]b, int [][16]c){
     //function matrix_mult takes two full matrices and an empty matrix
     //the function stores the multiplication in the new matrix
-    //return 0 if there is a successful multiplication
-    return 0;
+    
 }
-int SAM(){
+void SAM(){
     //pattern 0
     int patt[7] = {-6000, -300, -3, 0, 3, 300, 6000};
     //can add and then comment out patterns as we go
@@ -21,8 +20,8 @@ int SAM(){
     int N = sizeof(A[0]);
     //DSR1 = spdiags(1./sqrt(diag(A), [0], N, N)
     //spdiags (A, d,m, n ) takes the cols of A and places on diagonals specified by d
-    
+
     //As = Dsr1*(A*Dsr1)
-    int multSuccess = matrix_mult(A, B, C);
-    return 0;
+    //matrix_mult(A, B, C);
+    
 }
