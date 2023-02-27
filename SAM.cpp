@@ -1,38 +1,27 @@
-//working with top_opts matrix files with particular sizes (N16k to start)
-//load the matrix in
-//scaling and preconditioner will go here
-//now we'll start converting the SAM into c++ code
-
-//fix the sizing
-int N=16;
-int main(){
-    //nonzeros in preconditioner
-    int nz_count = 0;
-    for (int k=1; k<N; k++){
-        //looks like A_tmp should be a matrix NxN
-        //getting submatrix produced by r[k] and s[k]
-        //looks like getting the submatrix will be more difficult than it was in matlab
-        A_tmp = A(r[k], s[k]);
-        //least squares A_tmp * z = f
-        int []f = least_squares(A_tmp, z);
-    }
-    // generate a sparse matrix from rows, colums, and the put the value 1 in the occupied position
-    
-    //how do I know what size to make the sparsity matrix? dimensions have to be constant
-    int msk [nz_count][nz_count] = {rows,cols};
-    for(int i=0; i<nz_count; i++){
-        for(int j=0; j<nz_count; j++){
-            //how do I know which values are supposed to be 1 and which are supposed to be 0
-            x = 1; 
-        }
-    }
+int N;
+int matrix_mult(int[][16], int[][16], int[][16]);
+int SAM();
+int matrix_mult(int **a, int **b, int **c){
+    //function matrix_mult takes two full matrices and an empty matrix
+    //the function stores the multiplication in the new matrix
+    //return 0 if there is a successful multiplication
     return 0;
 }
-
-//this is so rough come back and write this
-//need to look at the least squares calculations in matlab
-int * least_squares(int ** A, int * f){
-    return f;
+int SAM(){
+    //pattern 0
+    int patt[7] = {-6000, -300, -3, 0, 3, 300, 6000};
+    //can add and then comment out patterns as we go
+    //patt is used for preprocessing the sparsity pattern
+    //compute the map (SAM) as M = As0
+    int A[16][16];
+    int B[16][16];
+    int C[16][16];
+    //N = size(A, 1)
+    //here we are saying we want the size of dimension 1 in A
+    int N = sizeof(A[0]);
+    //DSR1 = spdiags(1./sqrt(diag(A), [0], N, N)
+    //As = Dsr1*(A*Dsr1)
+    
+    int multSuccess = matrix_mult(A, B, C);
+    return 0;
 }
-
-
